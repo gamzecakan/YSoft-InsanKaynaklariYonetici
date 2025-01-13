@@ -1,0 +1,492 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+#menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: white;
+    border-bottom: 2px solid #ddd;
+}
+
+#logo img {
+    height: 75px;
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #4e4e4e;
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #1677ff;
+}
+
+.icon {
+    font-size: 18px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 140px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    right: 0;
+    top: 100%; /* Butonun altına koy */
+    text-align: left;
+}
+
+.dropdown-content a {
+    color: #4e4e4e;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Responsive düzenleme */
+@media (max-width: 768px) {
+    #menu {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+
+    nav a {
+        width: 100%;
+        text-align: left;
+        padding: 10px 0;
+    }
+
+    .dropdown-content {
+        position: static;
+        box-shadow: none;
+        width: 100%;
+        border-top: 1px solid #ddd;
+    }
+
+    .dropdown-content a {
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+    }
+}
+
+
+/* Homepage section */
+#homepage {
+    position: relative;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+}
+
+#picture {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/yazilim.jpg'); 
+    /* background-size: cover; */
+    background-position: center;
+    z-index: -1;
+}
+
+#content {
+    position: relative;
+    padding: 50px 20px;
+    max-width: auto;
+    margin: 0 auto;
+    background: rgba(0, 0, 0, 0.5); /* Arka plan şeffaflığı için */
+    color:#ddd;
+}
+
+#content h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+
+}
+
+#content p {
+    font-size: 18px;
+    line-height: 1.6;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    text-align: justify;
+
+}
+
+/* Hakkımızda Section CSS */
+#about {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+    color: #333;
+}
+
+#about h3 {
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: #333;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+
+}
+
+#about .icon {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+#about .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    max-width: 800px; /* Yazı ve resim genişliği */
+    margin: 0 auto;
+    padding: 0 20px; /* Mobil cihazlar için iç boşluk */
+}
+
+#about .container img {
+    width: 100%; 
+    height: auto;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#about .container p {
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: justify;
+    /* text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5); */
+    margin: 0; /* Gereksiz boşlukları kaldır */
+}
+
+
+/* Misyon */
+#mission {
+    padding: 30px 20px;
+    text-align: center;
+    background-color: #152f77; /* Kırmızı arka plan */
+    color: #cec8c8;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  }
+  
+  #mission h3 {
+    font-size: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Başlıklar ve metinleri hizalar */
+    flex-wrap: wrap; /* Responsive destekler */
+  }
+  
+  .column {
+    flex: 0 0 45%; 
+    margin-bottom: 20px;
+    text-align: justify; /* İki yana yaslama */
+  }
+  
+  .column h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-align: center; 
+  }
+  
+  .column p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #c7c7c7;
+    text-align: justify; /* Paragraflar iki yana yaslı */
+  }
+  
+  
+  @media (max-width: 768px) {
+    .row {
+      flex-direction: column; /* Mobilde sütunlar alt alta gelir */
+    }
+  
+    .column {
+      flex: 0 0 100%; /* Tüm genişliği kaplar */
+      text-align: justify; /* Mobilde de iki yana yaslı */
+    }
+  }
+  
+/*projelerimzi*/
+#project h3{
+    font-size: 30px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+
+}
+
+#project{
+    background-color:#f6f6f6 ;
+    padding: 50px;
+    text-align: center;
+    height: 550px;
+}
+.cards{
+    width: 320px;
+    height:300px;
+    border:1px solid #4e4e4e;
+    padding:0;/*çerçeve resim arası boş kalmasın istedim*/
+    display:inline-block;/*inline aynı satır blocklaşsın*/
+    background-color: white;
+}
+
+.cards a{
+    text-decoration: none;
+}
+.cards:hover{
+    border:2px solid black;
+}
+.cardtitle{
+    font-size: 15px;
+    color:#1677ff;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.img-fluid{
+    max-width: 100%;
+    width:auto;
+    height: 250px;
+    object-fit: cover;
+    
+}
+.mt100{
+    margin-top: 100px;
+}
+
+#contact {
+    padding: 50px 20px;
+    color: #fff;
+}
+
+#contact h3{
+    font-size: 30px;
+    text-align: center;
+    color:#ddd;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.column {
+    flex: 1;
+    min-width: 300px;
+    padding: 50px;
+}
+
+.form-style {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 5px;
+    box-sizing:content-box;
+}
+.btn-submit {
+    background-color:#4e4e4e;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-submit:hover {
+    background-color: #333;
+}
+
+#adress_title {
+    margin-bottom: 10px;
+    text-align:left;
+    color:#ddd;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+
+}
+
+.padress {
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #4e4e4e;
+    background-color: white;
+}
+.social_footer ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+.social_footer ul li {
+    margin: 0 10px;
+}
+
+.social_footer ul li .account {
+    font-size: 20px;
+    color: #4e4e4e;
+}
+.social_footer ul li .account:hover{
+    color:#1677ff;
+}
+#up {
+    color: #4e4e4e;
+    font-size: 24px;
+}
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Küçük ekranlarda üst üste gelsin */
+        align-items: center;
+    }
+
+    #form, #adress {
+        flex: 1 1 100%; /* Tam genişlikte hizala */
+        margin: 0 auto; /* Ortada yer almasını sağlar */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #about .container {
+        gap: 20px;
+        padding: 0 15px;
+    }
+
+    #about h3 {
+        font-size: 28px;
+    }
+
+    #about .container p {
+        font-size: 16px;
+    }
+
+}
+
+@media screen and (max-width: 480px) {
+    #about h3 {
+        font-size: 24px;
+    }
+
+    #about .container p {
+        font-size: 14px;
+    }
+
+    #about .icon {
+        font-size: 30px;
+    }
+}
+
+/* Mobil cihazlar için responsive ayarlar */
+@media screen and (max-width: 768px) {
+    #menu {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 10px;
+        width: 100%;
+    }
+
+    nav a {
+        font-size: 14px;
+    }
+
+    #logo {
+        align-self: center;
+    }
+
+    #content {
+        padding: 30px 15px;
+    }
+
+    #content h2 {
+        font-size: 28px;
+    }
+
+    #content p {
+        font-size: 16px;
+    }
+}
+
+/* Daha küçük ekranlar için (telefonlar) */
+@media screen and (max-width: 480px) {
+    nav a {
+        font-size: 12px;
+        gap: 5px;
+    }
+
+    #logo img {
+        height: 40px;
+    }
+
+    #content {
+        padding: 20px 10px;
+    }
+
+    #content h2 {
+        font-size: 24px;
+    }
+
+    #content p {
+        font-size: 14px;
+    }
+}
